@@ -33,7 +33,7 @@ data();
         `;
         let  imageCoverApi =`
         <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-        src="${data.data[0].images.jpg.image_url}" alt="">
+        src="${data.data[1].images.jpg.image_url}" alt="">
         `;
         imageCover.innerHTML = imageCoverApi
         content.innerHTML = view;
