@@ -1,5 +1,6 @@
 const API = 'https://api.jikan.moe/v4/anime?q=YU GI OH&sfw';
-//const content =null || document.getElementById('content')
+const content =null || document.getElementById('content')
+const imageCover =null || document.getElementById('imageCover')
 
 async function fetchData(urlApi) {
     const response = await fetch(API);
@@ -30,6 +31,11 @@ data();
             </div>
         `).join("")}
         `;
+        let  imageCoverApi =`
+        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+        src="${data.data[0].images.jpg.image_url}" alt="">
+        `;
+        imageCover.innerHTML = imageCoverApi
         content.innerHTML = view;
     } catch (error) {
         console.log(error)
